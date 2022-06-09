@@ -59,15 +59,17 @@ EOF
       echo "* is a Go project."
 
       if [ -f Makefile ]; then
-        build_target=$(grep -E "^build.*:" Makefile | awk '{print $1}' | sed 's/://')
-        if [ ! -z "$build_target" ]; then
-          echo "Makefile has build target: $build_target"
+        build_targets=$(grep -E "^build.*:" Makefile | awk '{print $1}' | sed 's/://' | grep -v 'osx' | grep -v 'windows' | grep -v 'image' | grep -v 'docker')
+        if [ ! -z "$build_targets" ]; then
+          for target in $build_targets; do
+            echo "Makefile has build target: $target"
 cat <<EOF >> $WORKFLOW_PATH
-      - name: Build
+      - name: Build using '$target' target
         run: |
-          make $build_target
+          make $target
 
 EOF
+          done
         fi
       fi
 
