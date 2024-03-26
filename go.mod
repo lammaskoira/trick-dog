@@ -3,7 +3,7 @@ module github.com/lammaskoira/trick-dog
 go 1.18
 
 require (
-	github.com/cenkalti/backoff/v4 v4.1.3
+	github.com/cenkalti/backoff/v4 v4.3.0
 	github.com/go-git/go-git/v5 v5.4.2
 	github.com/google/go-github/v45 v45.0.0
 	github.com/spf13/cobra v1.4.0
