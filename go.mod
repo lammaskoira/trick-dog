@@ -7,7 +7,7 @@ require (
 	github.com/go-git/go-git/v5 v5.4.2
 	github.com/google/go-github/v45 v45.0.0
 	github.com/spf13/cobra v1.4.0
-	golang.org/x/oauth2 v0.0.0-20220608161450-d0670ef3b1eb
+	golang.org/x/oauth2 v0.22.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
